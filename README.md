@@ -8,7 +8,7 @@ For build:
 
 For run:
 
-### java -jar ./target/ContainerizedSpringBootApps-0.0.1.war
+### java -jar ./target/ContainerizedSpringBootApps-0.0.2.war
 
 URL:
 http://localhost:8081/employees
