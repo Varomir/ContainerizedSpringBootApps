@@ -1,4 +1,4 @@
-package org.mycompany.controler;
+package org.mycompany.controller;
 
 import org.mycompany.model.Employee;
 import org.mycompany.repository.EmployeeRepository;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class EmployeeControler {
+public class EmployeeController {
     private EmployeeRepository employeeRepository;
 
-    public EmployeeControler(EmployeeRepository employeeRepository) {
+    public EmployeeController(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 
