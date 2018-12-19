@@ -6,11 +6,13 @@ For build:
 
 ### mvn clean package
 
-For run:
+For run without Docker:
 
-### java -jar ./target/ContainerizedSpringBootApps-0.0.2.war
+### java -Dspring.profiles.active=default -jar target/containerized-spring-boot-apps-0.1.0.war
 
 URL:
+
 http://localhost:8081/employees
+
 http://localhost:8081/actuator/
 
