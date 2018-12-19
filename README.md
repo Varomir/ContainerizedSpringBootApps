@@ -1,8 +1,9 @@
 # Containerized Spring Boot Application example
 
-Requirements: JDK + maven, Docker
+Requirements: JDK + Maven, Docker
 
-For build:
+
+For build without containers:
 
 ### mvn clean package
 
@@ -14,5 +15,19 @@ URL:
 
 http://localhost:8081/employees
 
-http://localhost:8081/actuator/
+http://localhost:8081/actuator
 
+
+For build, deploy and run with Docker container
+
+### docker build -t containerized-spring-boot-apps:latest .
+### docker image ls
+### docker run -d -p 8080:8081 containerized-spring-boot-apps:latest
+### docker ps
+
+Check URL: http://localhost:8080/employees
+
+ * Note: the port was changed, where '8080' is the Host machine port and '8081' port inside containerized application.
+
+Fro stop:
+### docker kill <CONTAINER ID>
