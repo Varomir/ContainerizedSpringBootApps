@@ -41,7 +41,12 @@ Check URL: http://localhost:8080/employees
 
  * Note: the port was changed, where '8080' is the Host machine port and '8081' port inside containerized application.
 
+To get the container logs:
+```
+docker logs {CONTAINER_ID}
+```
+
 For stop your containerized application:
 ```
-docker kill {CONTAINER ID}
+docker kill {CONTAINER_ID}
 ```
