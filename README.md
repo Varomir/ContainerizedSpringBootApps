@@ -24,8 +24,11 @@ http://localhost:8081/actuator
 For build, deploy and run with Docker container:
 
 ```docker build -t containerized-spring-boot-apps:latest .```
+
 ```docker image ls```
+
 ```docker run -d -p 8080:8081 containerized-spring-boot-apps:latest```
+
 ```docker ps```
 
 Check URL: http://localhost:8080/employees
@@ -43,9 +46,12 @@ For stop your containerized application:
 ```docker run -d -v /private/var/tmp:/tmp/ -p 8080:8081 containerized-spring-boot-apps:latest```
 
  * Note: The original LOG-file path '/tmp/application.log' marks the file path 'inside' the docker container.
+
  And then we 'map' the container directory with the host machine directory.
 
  In this particular case, prepared for Mac OS:
  [container] '/tmp/' => [host machine] '/private/var/tmp'
+
  Go to the: http://localhost:8080/actuator/health
+
  ```cat /private/var/tmp/application.log```
