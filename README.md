@@ -3,17 +3,15 @@
 Requirements: JDK + Maven, Docker
 
 
+### Build, deploy and running pure Java application without container
+
 For build without containers:
 
-```
-mvn clean package
-```
+```mvn clean package```
 
 For run without Docker:
 
-```
-java -Dspring.profiles.active=default -jar target/containerized-spring-boot-apps-0.1.1.war
-```
+```java -Dspring.profiles.active=default -jar target/containerized-spring-boot-apps-0.1.1.war```
 
 URL:
 
@@ -21,14 +19,13 @@ http://localhost:8081/employees
 
 http://localhost:8081/actuator
 
+### Play with Docker containers.
 
-For build, deploy and run with Docker container
+For build, deploy and run with Docker container:
 
 ```docker build -t containerized-spring-boot-apps:latest .```
 ```docker image ls```
-```
-docker run -d -p 8080:8081 containerized-spring-boot-apps:latest
-```
+```docker run -d -p 8080:8081 containerized-spring-boot-apps:latest```
 ```docker ps```
 
 Check URL: http://localhost:8080/employees
@@ -50,3 +47,5 @@ For stop your containerized application:
 
  In this particular case, prepared for Mac OS:
  [container] '/tmp/' => [host machine] '/private/var/tmp'
+ Go to the: http://localhost:8080/actuator/health
+ ```cat /private/var/tmp/application.log```
