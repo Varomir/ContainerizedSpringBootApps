@@ -12,7 +12,7 @@ mvn clean package
 For run without Docker:
 
 ```
-java -Dspring.profiles.active=default -jar target/containerized-spring-boot-apps-0.1.0.war
+java -Dspring.profiles.active=default -jar target/containerized-spring-boot-apps-0.1.1.war
 ```
 
 URL:
@@ -47,6 +47,13 @@ docker logs {CONTAINER_ID}
 ```
 
 For stop your containerized application:
-```
-docker kill {CONTAINER_ID}
-```
+```docker kill {CONTAINER_ID}```
+
+### Save data outside of the container
+
+```docker run -d -v /private/var/tmp:/tmp/ -p 8080:8081 containerized-spring-boot-apps:latest```
+
+ * Note: The original LOG-file path '/tmp/application.log' marks the file path 'inside' the docker container.
+ And then we 'map' the container directory with the host machine directory.
+ In this particular case, prepared for Mac OS:
+ [container] '/tmp/' => [host machine] '/private/var/tmp'
