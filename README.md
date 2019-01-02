@@ -11,7 +11,7 @@ For build without containers:
 
 For run without Docker:
 
-```java -Dspring.profiles.active=default -jar target/containerized-spring-boot-apps-0.1.1.war```
+```java -Dspring.profiles.active=default -jar target/containerized-spring-boot-apps-0.1.2.war```
 
 URL:
 
