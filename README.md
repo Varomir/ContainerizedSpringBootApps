@@ -29,7 +29,7 @@ For build, deploy and run with Docker container:
 
 ```docker run -d -p 8080:8081 containerized-spring-boot-apps:latest```
 
-```docker ps```
+```docker ps -a```
 
 Check URL: http://localhost:8080/employees
 
@@ -55,3 +55,12 @@ For stop your containerized application:
  Go to the: http://localhost:8080/actuator/health
 
  ```cat /private/var/tmp/application.log```
+
+ ### Passing arguments to the container
+
+ Add ENTRYPOINT, rebuild:
+ ```docker build -t containerized-spring-boot-apps:latest .```
+ Run with 'dev' argument:
+ ```docker run -d --name bootapp -v /private/var/tmp:/tmp/ -p 8080:8081 containerized-spring-boot-apps:latest dev```
+ Check the applied 'spring.profiles.active':
+ ```grep profiles /private/var/tmp/application.log``` ==> ```... The following profiles are active: dev```
